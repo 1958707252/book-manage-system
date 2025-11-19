@@ -1,27 +1,29 @@
 <template>
-    <div class="login-container">
-        <div style="display: flex;justify-content: left;margin: 20px 0;">
-            <img src="/logo.jpg" style="width: 220px;height: 100px;">
-        </div>
-        <div class="login-panel">
-            <div style="width: 300px;padding: 40px;display: flex;justify-content: center;align-items: center;">
-                <img src="/bag.png" style="width: 350px;" />
+    <div id="login-page">
+        <div class="login-container">
+            <div style="display: flex;justify-content: left;margin: 18px 0;">
+                <img src="/logo.jpg" style="width: 260px; border-radius: 20px; box-shadow: 1px 1px 10px 5px salmon;">
             </div>
-            <div class="right-login">
-                <div>
-                    <h2>快登录吧</h2>
+            <div class="login-panel">
+                <div style="width: 300px;padding: 40px;display: flex;justify-content: center;align-items: center;">
+                    <img src="/bag.png" style="width: 350px;" />
                 </div>
-                <div class="text">
-                    <input v-model="act" class="act" placeholder="输入账号" />
-                </div>
-                <div class="text">
-                    <input v-model="pwd" class="pwd" type="password" placeholder="输入密码" />
-                </div>
-                <div>
-                    <span class="login-btn" @click="login">立即登录</span>
-                </div>
-                <div class="tip">
-                    <p>没有账号？<span class="no-act" @click="toDoRegister">点此注册</span></p>
+                <div class="right-login">   
+                    <div>
+                        <h2>快登录吧</h2>
+                    </div>
+                    <div class="text">
+                        <input v-model="act" class="act" placeholder="输入账号" />
+                    </div>
+                    <div class="text">
+                        <input v-model="pwd" class="pwd" type="password" placeholder="输入密码" />
+                    </div>
+                    <div>
+                        <span class="login-btn" @click="login">立即登录</span>
+                    </div>
+                    <div class="tip">
+                        <p>没有账号？<span class="no-act" @click="toDoRegister">点此注册</span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,53 +105,65 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 * {
     user-select: none;
+}
+
+#login-page {
+    width: 100%;
+    height: 100ch;
+    background-image: url("../../../public/background.jpg");
+    background-repeat: space;
+    background-size: cover;
 }
 
 .login-container {
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(255,255,255);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    .login-panel {
-        display: flex;
-        border-top-left-radius: 10px;
-        padding: 20px;
+}
+.login-panel {
+    display: flex;
+    border-top-left-radius: 10px;
+    padding: 15px;
         justify-content: space-between;
         height: auto;
         border-radius: 6px;
         border-top-left-radius: 100px;
         border-bottom-left-radius: 20px;
-        // background-color: rgb(100, 119, 224);
+        /* // background-color: rgb(100, 119, 224); */
         background: linear-gradient(to right, rgb(7, 109, 219), rgb(119, 139, 220));
-        //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-
+        /* //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); */
+}
+        
         .right-login {
             width: 283px;
-            background-color: rgb(253, 253, 253);
-            padding: 30px;
+            background-color: rgba(253, 253, 253, 0.5);
+            padding: 18px;
             border-radius: 5px;
-            // border-top-left-radius: 150px;
-            // border-bottom-left-radius: 5px;
+            /* // border-top-left-radius: 150px; */
+            /* // border-bottom-left-radius: 5px;
             // border-top-right-radius: 5px;
-            // border-bottom-right-radius: 5px;
+            // border-bottom-right-radius: 5px; */
         }
 
         .logo {
-            margin: 10px 0 30px 0;
+            margin: 10px 0 20px 0;
         }
-
+   
+    input::placeholder {
+        font-size: 14px;
+        line-height: 46px;
+    }
         .act,
         .pwd {
             margin: 8px 0;
-            height: 63px;
-            line-height: 63px;
+            height: 46px;
+            line-height: 46px;
             width: 100%;
             font-size: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -166,7 +180,7 @@ export default {
         .act:focus,
         .pwd:focus {
             outline: none;
-            //border: 2px solid rgb(16, 170, 209);
+            /* //border: 2px solid rgb(16, 170, 209); */
             transition: 1.2s;
             background-color: rgb(244, 244, 244);
         }
@@ -177,7 +191,6 @@ export default {
             font-size: 14px;
             padding-right: 10px;
         }
-    }
     .login-btn:hover{
         background-color: rgb(39, 106, 208);
     }
@@ -225,5 +238,4 @@ export default {
         }
     }
 
-}
 </style>

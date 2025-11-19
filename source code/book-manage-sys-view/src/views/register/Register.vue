@@ -107,10 +107,14 @@ export default {
     user-select: none;
 }
 
+
 .register-containel {
     // background-image: url('/bag.png');
     width: 100%;
     min-height: 100vh;
+    background-image: url("../../../public/background.jpg");
+    background-repeat: space;
+    background-size: cover;   
    // background-color: rgb(207, 192, 109);
     display: flex;
     /* 启用Flexbox布局 */
